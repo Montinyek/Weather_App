@@ -1,0 +1,291 @@
+body {
+  background-color: #343d4b;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+  display: inline-flex;
+  background-color: #222831;
+  padding: 1.3rem 1.5rem 1.3rem 0;
+  gap: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.today {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 25px;
+  padding: 1rem;
+  margin: -1.3rem 0 -1.3rem 0;
+  color: white;
+  transition: background-image 1s;
+  width: 9rem
+}
+
+.todaysDate,
+.todaysWeather,
+.rightSide,
+.extraInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.todaysDate {
+  gap: 0.4rem;
+}
+
+.todaysDate span:nth-child(1) {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.todaysDate span:nth-child(2) {
+  margin-bottom: 0.7rem;
+  font-weight: 550;
+}
+
+.todaysDate span:nth-child(3) {
+  font-weight: 550;
+}
+
+.todaysWeather {
+  gap: 0.8rem;
+}
+
+.todaysWeather div:nth-child(1) {
+  font-size: 3rem;
+  animation: scale 3s infinite;
+}
+
+.todaysWeather span,
+div {
+  font-weight: 800;
+}
+
+.todaysDegree {
+  font-size: 2.5rem;
+}
+
+.todaysDegree>span:nth-child(2) {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.todaysDegree>span:not(:nth-child(2)) {
+  font-size: 2rem;
+}
+
+.todaysDegree span:nth-child(1),
+.todaysDegree span:nth-child(3) {
+  cursor: pointer;
+}
+
+.partition {
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+}
+
+.todaysWeather div:nth-child(3) {
+  font-size: 1.4rem;
+}
+
+.rightSide {
+  gap: 1.8rem;
+  align-items: center;
+  color: white;
+}
+
+.extraInfo {
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.extraInfo div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.extraInfo div span:nth-child(1) {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.nextSix {
+  display: flex;
+  max-width: 13.5rem;
+  overflow: auto;
+  border-radius: 5px;
+  padding: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  box-shadow: 1px 10px 46px 9px rgba(0, 0, 0, 0.79);
+  transition: all 1s;
+  scroll-snap-type: x proximity;
+}
+
+.nextSix div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 1rem 0.2rem 1rem;
+  gap: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+  scroll-snap-align: center;
+}
+
+.nextSix div span:nth-child(3) {
+  font-weight: 750;
+}
+
+.nextSix::-webkit-scrollbar {
+  margin-top: 10px;
+  height: 7px;
+}
+
+.nextSix::-webkit-scrollbar-track {
+  border-radius: 25px;
+}
+
+.nextSix::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 25px;
+}
+
+input {
+  margin-top: 2rem;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  padding: 0.3rem 0.3rem 0.3rem 1rem;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  max-width: 14rem;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s;
+}
+
+.fa-location-dot {
+  margin-right: 0.5rem;
+}
+
+@keyframes scale {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(0, 10px);
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .rightSide {
+    width: 10rem
+  }
+
+  .nextSix {
+    width: 9.2rem;
+  }
+
+  input {
+    width: 9rem
+  }
+
+  .today {
+    width: 9rem
+  }
+
+  .extraInfo div span:nth-child(1) {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .extraInfo div span:nth-child(2) {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .todaysDate span:nth-child(1) {
+    font-size: 1.2rem
+  }
+
+  .todaysDate span:nth-child(2) {
+    font-size: 1rem
+  }
+
+  .todaysDate span:nth-child(3) {
+    font-size: 0.9rem
+  }
+
+  .rightSide {
+    width: 7rem
+  }
+
+  .nextSix {
+    width: 5.2rem;
+  }
+
+  input {
+    width: 7rem
+  }
+
+  .today {
+    width: 6rem
+  }
+
+  .extraInfo div span:nth-child(1) {
+    font-size: 0.6rem;
+    font-weight: 600;
+  }
+
+  .todaysDegree {
+    font-size: 1.5rem
+  }
+
+  .todaysDegree span:nth-child(1),
+  .todaysDegree span:nth-child(3) {
+    font-size: 1.3rem
+  }
+
+  .extraInfo div span:nth-child(1) {
+    font-size: 0.6rem;
+    font-weight: 700;
+  }
+
+  .extraInfo div span:nth-child(2) {
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+}
+
+@media (hover: hover) {
+  .nextSix div:hover {
+    background-color: white !important;
+    color: #222831 !important;
+  }
+}
